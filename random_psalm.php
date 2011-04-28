@@ -23,12 +23,15 @@ Check what is the OS PHP is running and configure what command will be used to
 open an browser window with the selected psalm at chabad's website
 */
 switch (PHP_OS) {
+	// Mac OS
 	case 'Darwin':
 		$command = 'open';
 	break;
+	// Linux
 	case 'Linux':
 		$command = 'xdg-open';
 	break;
+	// Windows
 	default:
 		$command = 'start';	 	
 	break;
