@@ -55,10 +55,10 @@ Run the command to open the website
 */
 exec("$command $chabadUrl");
 echo "\n=================\n";
-echo "\nrandom_psalm by Adler Medrado\n";
-echo "\nhttp://adlermedrado.com.br\n";
-echo "\nThanks to Chabad - http://chabad.org.br\n";
-echo "\n=================\n";
+echo "random_psalm by Adler Medrado\n";
+echo "http://adlermedrado.com.br\n";
+echo "Thanks to Chabad - http://chabad.org.br\n";
+echo "=================\n";
 /*
 That's it ;-)
 */
