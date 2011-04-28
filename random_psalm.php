@@ -54,11 +54,11 @@ switch (PHP_OS) {
 Run the command to open the website 
 */
 exec("$command $chabadUrl");
-echo "\n=================\n";
+echo "\n==========================================\n";
 echo "random_psalm by Adler Medrado\n";
 echo "http://adlermedrado.com.br\n";
 echo "Thanks to Chabad - http://chabad.org.br\n";
-echo "=================\n";
+echo "============================================\n";
 /*
 That's it ;-)
 */
