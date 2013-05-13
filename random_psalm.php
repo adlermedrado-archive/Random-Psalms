@@ -11,6 +11,23 @@ Neither the name of the ADLER BREDIKS MEDRADO nor the names of its contributors 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+$prefixUrl = 'sn';
+
+if ($argc > 1) {
+    if (array_key_exists(1,$argv)) {
+        switch ($argv[1]) {
+        case 'p':
+            $prefixUrl = 'sn';
+            break;
+        case 't';
+            $prefixUrl = 'stn';
+            break;
+        default:
+            $prefixUrl = 'sn';
+            break;
+        }
+    }
+}
 
 /*
 Get an Randomic number between 1 and 150
@@ -26,12 +43,12 @@ if (strlen($psalmNumber) == 1)
 /*
 Create the URL that will point to chabad's website
 */
-$chabadUrl = "http://chabad.org.br/tora/salmos/salmos/sn{$psalmNumber}.html";
+$chabadUrl = "http://chabad.org.br/tora/salmos/salmos/{$prefixUrl}{$psalmNumber}.html";
 
 $command = null;
 
 /*
-Check what is the OS PHP is running and configure what command will be used to 
+Check what is the OS PHP is running and configure what command will be used to
 open an browser window with the selected psalm at chabad's website
 */
 switch (PHP_OS) {
@@ -45,12 +62,12 @@ switch (PHP_OS) {
 	break;
 	// Windows
 	default:
-		$command = 'start';	 	
+		$command = 'start';
 	break;
 }
 
 /*
-Run the command to open the website 
+Run the command to open the website
 */
 exec("$command $chabadUrl");
 echo "\n==========================================\n";
