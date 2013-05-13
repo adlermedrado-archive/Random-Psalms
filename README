@@ -2,8 +2,7 @@ This is a CLI PHP script.
 
 Usage: php random_psalm.php
 
-The above example will open in portuguese. If you want to open the transliterated version, just pass
-the "t" parameter. e.g: php random_psalm.php t 
+The above example will open in portuguese. If you want to open the transliterated version, just pass the "t" parameter. e.g: php random_psalm.php t 
 
 If you use the "p" parameter, it will open it in portuguese.
 
